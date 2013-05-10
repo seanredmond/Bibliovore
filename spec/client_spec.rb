@@ -8,7 +8,6 @@ describe Bibliovore::Client do
   describe "#library" do
     context "with a good id" do
       it "returns a Library object" do
-        # @client.stub(:get_endpoint) {LIBRARY_RESPONSE}
         @client.conn.stub!(:get).and_return(mock Faraday::Response,
           :body => LIBRARY_RESPONSE
         )
