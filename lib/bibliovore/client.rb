@@ -12,6 +12,10 @@ module Bibliovore
       @conn = Faraday.new
     end
 
+    def conn
+      @conn
+    end
+
     # Get a library by id
     #
     # @param [String] id The library id
@@ -53,7 +57,11 @@ module Bibliovore
     def get_endpoint(path, params = {})
       fullpath = "#{@@base}/#{@@version}/#{path}"
       response = @conn.get fullpath, params.merge({"api_key" => @api_key})
-      JSON.parse(response.body)
+      data = JSON.parse(response.body)
+      if data.keys.include?('error')
+        raise Bibliovore::ApiError, data['error']['message']
+      end
+      return data
     end
   end
 end
