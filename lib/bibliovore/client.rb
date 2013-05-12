@@ -3,6 +3,8 @@ module Bibliovore
     @@base = 'https://api.bibliocommons.com'
     @@version = 'v1'
 
+    attr_reader :conn
+
     # Create a Bibliovore client
     #
     # @param [String] api_key Your API key. The shirt and shoes of API service
@@ -12,9 +14,9 @@ module Bibliovore
       @conn = Faraday.new
     end
 
-    def conn
-      @conn
-    end
+    # def conn
+    #   @conn
+    # end
 
     # Get a library by id
     #
@@ -53,6 +55,7 @@ module Bibliovore
     # Retrieve an endpoint
     #
     # @param [String] path The endpoint path
+    # @raise [Bibliovore::ApiError] if asd dsa dsad
     # @return [Hash] a parsed JSON object
     def get_endpoint(path, params = {})
       fullpath = "#{@@base}/#{@@version}/#{path}"
