@@ -28,12 +28,15 @@ describe Bibliovore::Client do
 
   describe "#user" do
     context "with a good id" do
-      it "returns a User object" do
+      before :each do
         @client.conn.stub!(:get).and_return(mock Faraday::Response,
           :body => USERID_RESPONSE
         )
-        results = @client.user('unittestuser')
-        results.should be_an_instance_of Bibliovore::User
+        @user = @client.user('unittestuser')
+      end
+
+      it "returns a User object" do
+        @user.should be_an_instance_of Bibliovore::User
       end
     end
 
@@ -49,24 +52,36 @@ describe Bibliovore::Client do
 
   describe "#users" do
     context "with a good id" do
-      it "returns an Array of User objects" do
+      before :each do
         @client.conn.stub!(:get).and_return(mock Faraday::Response,
           :body => USER_RESPONSE
         )
-        results = @client.users('unittestuser')
-        results.should be_an_instance_of Array
-        results.first.should be_an_instance_of Bibliovore::User
+        @users = @client.users('unittestuser')
+      end
+
+      it "returns an Array" do
+        @users.should be_an_instance_of Array
+      end
+
+      it "returns an Array of User objects" do
+        @users.first.should be_an_instance_of Bibliovore::User
       end
     end
 
     context "with a bad id" do
-      it "returns an Array of User objects" do
+      before :each do
         @client.conn.stub!(:get).and_return(mock Faraday::Response,
           :body => NOUSER_RESPONSE
         )
-        results = @client.users('unittestuser')
-        results.should be_an_instance_of Array
-        results.first.should be_nil
+        @users = @client.users('unittestuser')
+      end
+
+      it "returns an Array" do
+        @users.should be_an_instance_of Array
+      end
+
+      it "returns an empty Array" do
+        @users.first.should be_nil
       end
     end
   end
