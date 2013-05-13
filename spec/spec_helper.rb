@@ -51,3 +51,40 @@ NOUSERID_RESPONSE = %q<{
         "request": "/users/123456789?api_key=abcdefghijklmnopqrstuvwx"
     }
 }>
+
+USERLISTS_RESPONSE = %q<{
+    "count": 2,
+    "limit": 10,
+    "lists": [
+        {
+            "created": "2012-11-12T19:30:02Z",
+            "description": "First list description",
+            "details_url": "http://any.bibliocommons.com/list/show/123456789/987654321",
+            "id": "987654321",
+            "item_count": 6,
+            "language": "en-US",
+            "list_type": {
+                "id": "TOPIC_GUIDE",
+                "name": "Topic Guide"
+            },
+            "name": "First list name",
+            "updated": "2012-11-12T19:31:11Z"
+        },
+        {
+            "created": "2012-11-12T19:17:06Z",
+            "description": "Second list description",
+            "details_url": "http://any.bibliocommons.com/list/show/138443571/876543210",
+            "id": "876543210",
+            "item_count": 8,
+            "language": "en-US",
+            "list_type": {
+                "id": "TOP_10",
+                "name": "Top 10 List"
+            },
+            "name": "Second list name",
+            "updated": "2012-11-12T19:25:25Z"
+        }
+    ],
+    "page": 1,
+    "pages": 1
+}>

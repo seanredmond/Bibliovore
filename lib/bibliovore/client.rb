@@ -3,6 +3,7 @@ module Bibliovore
     @@base = 'https://api.bibliocommons.com'
     @@version = 'v1'
 
+    # @return [Faraday::Connection] The connection object
     attr_reader :conn
 
     # Create a Bibliovore client

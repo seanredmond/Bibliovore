@@ -1,5 +1,9 @@
 module Bibliovore
   class User
+
+    # @return [Bibliovore::Client] The Client object
+    attr_reader :client
+
     def initialize(data, client)
       @client = client
       @data = data
@@ -15,6 +19,12 @@ module Bibliovore
 
     def profile
       @data['profile_url']
+    end
+
+    def lists
+      @client.get_endpoint("users/#{id}/lists")["lists"].map{|l| 
+        Bibliovore::List.new(l, self)
+      }
     end
   end
 end
