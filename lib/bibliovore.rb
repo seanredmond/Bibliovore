@@ -4,6 +4,7 @@ require "bibliovore/version"
 require "bibliovore/client"
 require "bibliovore/library"
 require "bibliovore/list"
+require "bibliovore/title"
 require "bibliovore/user"
 require "bibliovore/errors"
 

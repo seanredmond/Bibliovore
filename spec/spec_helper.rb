@@ -88,3 +88,31 @@ USERLISTS_RESPONSE = %q<{
     "page": 1,
     "pages": 1
 }>
+
+TITLE_RESPONSE = %q<{
+    "authors": [
+        {
+            "name": "Lastname, Firstname"
+        }
+    ],
+    "availability": {
+        "id": "AVAILABLE",
+        "name": "Available to borrow"
+    },
+    "details_url": "http://nypl.bibliocommons.com/item/show/12345678901234",
+    "format": {
+        "id": "BK",
+        "name": "Book"
+    },
+    "id": "12345678901234",
+    "isbns": [
+        "0987654321098",
+        "5678901234"
+    ],
+    "primary_language": {
+        "name": "English"
+    },
+    "publication_date": "2010",
+    "sub_title": "The Book Subtitle",
+    "title": "The Book Title"
+}>
