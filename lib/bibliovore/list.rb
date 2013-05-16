@@ -1,4 +1,9 @@
 module Bibliovore
+
+  # class User
+  #   # Temporary dummy class because of circular dependency
+  # end
+
   class List
 
     # @return [Bibliovore::Client] The Client object
@@ -29,8 +34,8 @@ module Bibliovore
       @data['item_count']
     end
 
-    def list_type
-      @data['list_type']
+    def type
+      OpenStruct.new(@data['list_type'])
     end
 
     def name
@@ -39,6 +44,10 @@ module Bibliovore
 
     def updated
       @data['updated']
+    end
+
+    def user
+      Bibliovore::User.new(@data['user'], @client)
     end
   end
 end
