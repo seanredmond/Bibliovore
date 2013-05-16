@@ -99,9 +99,15 @@ describe Bibliovore::Title do
     end
   end
 
-  describe "publication_date" do
+  describe "#publication_date" do
     it "is 2010" do
       @title.publication_date.should eq "2010"
+    end
+  end
+
+  describe "#upcs" do
+    it "has no upcs" do
+      @title.upcs.should be_nil
     end
   end
 end

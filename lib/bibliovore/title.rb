@@ -55,5 +55,9 @@ module Bibliovore
     def publication_date
       @data['publication_date']
     end
+
+    def upcs
+      @data['upcs']
+    end
   end
 end
