@@ -1,9 +1,4 @@
 module Bibliovore
-
-  # class User
-  #   # Temporary dummy class because of circular dependency
-  # end
-
   class List
 
     # @return [Bibliovore::Client] The Client object

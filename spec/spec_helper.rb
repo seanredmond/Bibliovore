@@ -127,7 +127,7 @@ LIST_RESPONSE = %q<{
         "language": "en-US",
         "list_items": [
             {
-                "annotation": "",
+                "annotation": "An annotation",
                 "list_item_type": "title",
                 "title": {
                     "authors": [
@@ -479,28 +479,13 @@ LIST_RESPONSE = %q<{
                 }
             },
             {
-                "annotation": "",
-                "list_item_type": "title",
-                "title": {
-                    "authors": [],
-                    "details_url": "http://any.bibliocommons.com/item/show/2722869073",
-                    "format": {
-                        "id": "BK",
-                        "name": "Book"
-                    },
-                    "id": "2722869073",
-                    "isbns": [
-                        "9781607012542",
-                        "1607012545"
-                    ],
-                    "primary_language": {
-                        "name": "English"
-                    },
-                    "publication_date": "2011",
-                    "sub_title": "The Recent Undead",
-                    "title": "Vampires"
+                "list_item_type": "url",
+                "annotation": "Check out this cool online version of Oliver Twist.",
+                "url": {
+                  "title": "Oliver Twist by Charles Dickens.",
+                  "url": "http://www.online-literature.com/dickens/olivertwist/"
                 }
-            }
+            } 
         ],
         "list_type": {
             "id": "TOP_10",
