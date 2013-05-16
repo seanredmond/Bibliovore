@@ -44,5 +44,9 @@ module Bibliovore
     def user
       Bibliovore::User.new(@data['user'], @client)
     end
+
+    def items
+      @data['list_items'].map{|i| Bibliovore::ListItem.new(i, @client)}
+    end
   end
 end

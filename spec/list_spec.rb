@@ -68,4 +68,26 @@ describe Bibliovore::List do
       @list.details.should eq "http://any.bibliocommons.com/list/show/137981261/138453972"
     end
   end
+
+  describe "#items" do
+    before :each do
+      @items = @list.items
+    end
+
+    it "returns an Array" do
+      @items.should be_an_instance_of Array
+    end
+
+    it "returns an array of ListItems" do
+      @items.first.should be_an_instance_of Bibliovore::ListItem
+    end
+
+    it "has title items" do
+      @items.first.type.should eq "title"
+    end
+
+    it "has url items" do
+      @items.last.type.should eq "url"
+    end
+  end
 end
