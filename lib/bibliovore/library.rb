@@ -2,7 +2,7 @@ module Bibliovore
   class Library
     def initialize(data, client)
       @client = client
-      @data = data['library']
+      @data = data
     end
 
     def id
@@ -18,8 +18,8 @@ module Bibliovore
     end
 
     def locations
-      Hash[@client.get_endpoint("libraries/#{id}/locations")['locations'].
-        map(&:values).map(&:flatten)]
+      @client.get_endpoint("libraries/#{id}/locations")['locations'].
+        map{|a| LibraryLocation.new(a)}
     end
   end
 end
