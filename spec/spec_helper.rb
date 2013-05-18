@@ -2,9 +2,9 @@ require "bibliovore"
 
 LIBRARY_RESPONSE = %q<{
     "library": {
-        "catalog_url": "http://unittestlibrary.bibliocommons.com",
-        "id": "unittestlibrary",
-        "name": "Unit Test Library"
+        "id": "examplepl",
+        "name": "Example Public Library",
+        "catalog_url": "http://examplepl.bibliocommons.com"
     }
 }>
 
@@ -13,6 +13,23 @@ NOLIBRARY_RESPONSE = %q<{
         "message": "No library 'nyplsdjkflsdfd' found.",
         "request": "/libraries/nyplsdjkflsdfd?api_key=abcdefghijklmnopqrstuvwx"
     }
+}>
+
+LOCATIONS_RESPONSE = %q<{
+    "locations": [
+        {
+            "id": "MA",
+            "name": "Main Branch"
+        },
+        {
+            "id": "JP",
+            "name": "Johnson Park"
+        },
+        {
+            "id": "RH",
+            "name": "Riverdale Heights"
+        }
+    ] 
 }>
 
 USER_RESPONSE = %q<{
