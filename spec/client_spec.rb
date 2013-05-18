@@ -24,6 +24,15 @@ describe Bibliovore::Client do
         expect{@client.library('unittestlibrary')}.to raise_error(Bibliovore::ApiError)
       end
     end
+
+    context "with gibberish" do
+      it "throws the proper error" do
+        @client.conn.stub!(:get).and_return(mock Faraday::Response,
+          :body => GIBBERISH_RESPONSE
+        )
+        expect{@client.library('unittestlibrary')}.to raise_error(Bibliovore::UnrecognizableJSON)
+      end
+    end        
   end
 
   describe "#user" do

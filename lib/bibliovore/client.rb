@@ -25,7 +25,7 @@ module Bibliovore
     # @return Library A new Library instance
     def library(id)
       Bibliovore::Library.new(
-        get_endpoint("libraries/#{id}"), self
+        get_endpoint("libraries/#{id}", 'library'), self
       )
     end
 
@@ -38,7 +38,7 @@ module Bibliovore
     # exact match. The format of the users endpoint implies that it might 
     # someday allow for multiple results.
     def users(query)
-      get_endpoint('users', {'q' => query})["users"].map{|u| 
+      get_endpoint('users', nil, {'q' => query})["users"].map{|u| 
         Bibliovore::User.new(u, self)
       }
     end
@@ -49,7 +49,7 @@ module Bibliovore
     # @returns User A new User instance
     def user(id)
       Bibliovore::User.new(
-        get_endpoint("users/#{id}")['user'], self
+        get_endpoint("users/#{id}", 'user'), self
       )
     end
 
@@ -58,14 +58,31 @@ module Bibliovore
     # @param [String] path The endpoint path
     # @raise [Bibliovore::ApiError] if asd dsa dsad
     # @return [Hash] a parsed JSON object
-    def get_endpoint(path, params = {})
+    def get_endpoint(path, key = nil, params = {})
       fullpath = "#{@@base}/#{@@version}/#{path}"
       response = @conn.get fullpath, params.merge({"api_key" => @api_key})
       data = JSON.parse(response.body)
+
+      # This an error response
       if data.keys.include?('error')
         raise Bibliovore::ApiError, data['error']['message']
       end
-      return data
+
+      # If we aren't looking for a particular field in the JSON response, just
+      # return the whole thing
+      if key == nil
+        return data
+      end
+
+      # If we are looking for a particular field ('library', 'users') check
+      # that the field is there and return its value
+      if data.keys.include?(key)
+        return data[key]
+      end
+
+      # Well, we were looking for a particular field, but we didn't find it
+      raise Bibliovore::UnrecognizableJSON, 
+        "Couldn't interpret response: #{data.inspect}"
     end
   end
 end
