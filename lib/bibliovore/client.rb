@@ -29,6 +29,16 @@ module Bibliovore
       )
     end
 
+    # Get the most recently created lists. Currently this only return the four
+    # most recently created lists.
+    #
+    # @return [Array] an Array of {List} objects
+    def lists
+      get_endpoint('lists')["lists"].map{|l| 
+        Bibliovore::List.new(l, self)
+      }
+    end      
+
     # Retrieve users by name search.
     #
     # @param [String] query The string to search for
