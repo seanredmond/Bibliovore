@@ -32,6 +32,92 @@ LOCATIONS_RESPONSE = %q<{
     ] 
 }>
 
+LISTS_RESPONSE = %q<{
+    "count": 4, 
+    "limit": 4, 
+    "lists": [
+        {
+            "created": "2013-03-12T11:14:42Z", 
+            "description": null, 
+            "details_url": "http://any.bibliocommons.com/list/show/112211221/111111111",
+                                                                    
+            "id": "111111111", 
+            "item_count": 2, 
+            "language": "en-US", 
+            "list_type": {
+                "id": "TOPIC_GUIDE", 
+                "name": "Topic Guide"
+            }, 
+            "name": "My Favorite Science and Nature Books", 
+            "updated": "2013-03-12T11:16:51Z", 
+            "user": {
+                "id": "112211221", 
+                "name": "user_1", 
+                "profile_url": "http://any.bibliocommons.com/collection/show/112211221"
+            }
+        }, 
+        {
+            "created": "2012-11-12T20:26:39Z", 
+            "description": null, 
+            "details_url": "http://any.bibliocommons.com/list/show/223322332/222222222", 
+            "id": "222222222", 
+            "item_count": 14, 
+            "language": "en-US", 
+            "list_type": {
+                "id": "TOP_10", 
+                "name": "Top 10 List"
+            }, 
+            "name": "My favourite vampire books", 
+            "updated": "2012-11-12T20:29:51Z", 
+            "user": {
+                "id": "223322332", 
+                "name": "user_2", 
+                "profile_url": "http://any.bibliocommons.com/collection/show/223322332"
+            }
+        }, 
+        {
+            "created": "2012-11-12T19:30:02Z", 
+            "description": null, 
+            "details_url": "http://any.bibliocommons.com/list/show/334433443/333333333", 
+            "id": "333333333", 
+            "item_count": 6, 
+            "language": "en-US", 
+            "list_type": {
+                "id": "TOPIC_GUIDE", 
+                "name": "Topic Guide"
+            }, 
+            "name": "My Favorite Stories", 
+            "updated": "2012-11-12T19:31:11Z", 
+            "user": {
+                "id": "334433443", 
+                "name": "user_3", 
+                "profile_url": "http://any.bibliocommons.com/collection/show/334433443"
+            }
+        }, 
+        {
+            "created": "2012-11-12T19:17:06Z", 
+            "description": null, 
+            "details_url": "http://any.bibliocommons.com/list/show/334433443/444444444", 
+            "id": "444444444", 
+            "item_count": 8, 
+            "language": "en-US", 
+            "list_type": {
+                "id": "TOP_10", 
+                "name": "Top 10 List"
+            }, 
+            "name": "My Favorite Fairy Tales", 
+            "updated": "2012-11-12T19:25:25Z", 
+            "user": {
+                "id": "334433443", 
+                "name": "user_3", 
+                "profile_url": "http://any.bibliocommons.com/collection/show/334433443"
+            }
+        }
+    ], 
+    "page": 1, 
+    "pages": 1
+}>
+
 USER_RESPONSE = %q<{
     "count": 1,
     "limit": 1,
@@ -132,6 +218,268 @@ TITLE_RESPONSE = %q<{
     "publication_date": "2010",
     "sub_title": "The Book Subtitle",
     "title": "The Book Title"
+}>
+
+TITLES_RESPONSE = %q<{
+    "count": 412,
+    "limit": 10,
+    "page": 1,
+    "pages": 42,
+    "titles": [
+        {
+            "authors": [
+                {
+                    "name": "Melville, Herman"
+                }
+            ],
+            "availability": {
+                "id": "AVAILABLE",
+                "name": "Available to borrow"
+            },
+            "details_url": "http://nypl.bibliocommons.com/item/show/18708779052907",
+            "format": {
+                "id": "PAPERBACK",
+                "name": "Paperback"
+            },
+            "id": "18708779052907",
+            "isbns": [
+                "0553213113",
+                "9780553213119"
+            ],
+            "primary_language": {
+                "name": "English"
+            },
+            "publication_date": "2003",
+            "sub_title": "",
+            "title": "Moby-Dick"
+        },
+        {
+            "authors": [
+                {
+                    "name": "Melville, Herman"
+                }
+            ],
+            "availability": {
+                "id": "AVAILABLE",
+                "name": "Available to borrow"
+            },
+            "details_url": "http://nypl.bibliocommons.com/item/show/17230484052907",
+            "format": {
+                "id": "BK",
+                "name": "Book"
+            },
+            "id": "17230484052907",
+            "primary_language": {
+                "name": "English"
+            },
+            "publication_date": "1981",
+            "sub_title": "",
+            "title": "Moby-Dick"
+        },
+        {
+            "authors": [
+                {
+                    "name": "Melville, Herman"
+                }
+            ],
+            "availability": null,
+            "details_url": "http://nypl.bibliocommons.com/item/show/19655776052907",
+            "format": {
+                "id": "EBOOK",
+                "name": "eBook"
+            },
+            "id": "19655776052907",
+            "isbns": [
+                "9781620117002",
+                "1620117002"
+            ],
+            "primary_language": {
+                "name": "English"
+            },
+            "publication_date": "2012",
+            "sub_title": "Or, The Whale",
+            "title": "Moby Dick"
+        },
+        {
+            "authors": [
+                {
+                    "name": "Kimmel, Eric A."
+                }
+            ],
+            "availability": {
+                "id": "AVAILABLE",
+                "name": "Available to borrow"
+            },
+            "details_url": "http://nypl.bibliocommons.com/item/show/19668330052907",
+            "format": {
+                "id": "BK",
+                "name": "Book"
+            },
+            "id": "19668330052907",
+            "isbns": [
+                "9780312662974",
+                "0312662971"
+            ],
+            "primary_language": {
+                "name": "English"
+            },
+            "publication_date": "2012",
+            "sub_title": "Chasing the Great White Whale",
+            "title": "Moby Dick"
+        },
+        {
+            "authors": [
+                {
+                    "name": "Wang, Jack"
+                }
+            ],
+            "availability": {
+                "id": "AVAILABLE",
+                "name": "Available to borrow"
+            },
+            "details_url": "http://nypl.bibliocommons.com/item/show/19723692052907",
+            "format": {
+                "id": "BK",
+                "name": "Book"
+            },
+            "id": "19723692052907",
+            "isbns": [
+                "9781927018118",
+                "1927018110"
+            ],
+            "primary_language": {
+                "name": "English"
+            },
+            "publication_date": "2012",
+            "sub_title": "",
+            "title": "Moby Dick"
+        },
+        {
+            "authors": [
+                {
+                    "name": "Melville, Herman"
+                }
+            ],
+            "availability": null,
+            "details_url": "http://nypl.bibliocommons.com/item/show/19528936052907",
+            "format": {
+                "id": "EBOOK",
+                "name": "eBook"
+            },
+            "id": "19528936052907",
+            "isbns": [
+                "9780062130068",
+                "0062130064"
+            ],
+            "primary_language": {
+                "name": "English"
+            },
+            "publication_date": "2011",
+            "sub_title": "",
+            "title": "Moby Dick"
+        },
+        {
+            "authors": [],
+            "availability": {
+                "id": "AVAILABLE_BY_REQUEST",
+                "name": "Available by request"
+            },
+            "details_url": "http://nypl.bibliocommons.com/item/show/18537237052907",
+            "format": {
+                "id": "BK",
+                "name": "Book"
+            },
+            "id": "18537237052907",
+            "isbns": [
+                "9780980205527",
+                "0980205522"
+            ],
+            "primary_language": {
+                "name": "English"
+            },
+            "publication_date": "2009",
+            "sub_title": "",
+            "title": "Moby Dick"
+        },
+        {
+            "authors": [
+                {
+                    "name": "Stahlberg, Lance"
+                }
+            ],
+            "availability": {
+                "id": "AVAILABLE",
+                "name": "Available to borrow"
+            },
+            "details_url": "http://nypl.bibliocommons.com/item/show/18532923052907",
+            "format": {
+                "id": "PAPERBACK",
+                "name": "Paperback"
+            },
+            "id": "18532923052907",
+            "isbns": [
+                "9789380028224",
+                "9380028229"
+            ],
+            "primary_language": {
+                "name": "English"
+            },
+            "publication_date": "2010",
+            "sub_title": "",
+            "title": "Moby Dick"
+        },
+        {
+            "authors": [
+                {
+                    "name": "Rouaud, Jean"
+                }
+            ],
+            "availability": {
+                "id": "AVAILABLE",
+                "name": "Available to borrow"
+            },
+            "details_url": "http://nypl.bibliocommons.com/item/show/19605251052907",
+            "format": {
+                "id": "BK",
+                "name": "Book"
+            },
+            "id": "19605251052907",
+            "isbns": [
+                "9788496867659",
+                "849686765X"
+            ],
+            "primary_language": {
+                "name": "Spanish"
+            },
+            "publication_date": "2010",
+            "sub_title": "",
+            "title": "Moby Dick"
+        },
+        {
+            "authors": [
+                {
+                    "name": "Melville, Herman"
+                }
+            ],
+            "availability": null,
+            "details_url": "http://nypl.bibliocommons.com/item/show/19376808052907",
+            "format": {
+                "id": "AB",
+                "name": "Downloadable Audiobook"
+            },
+            "id": "19376808052907",
+            "isbns": [
+                "9781101193648",
+                "1101193646"
+            ],
+            "primary_language": {
+                "name": "English"
+            },
+            "publication_date": "2007",
+            "sub_title": "",
+            "title": "Moby-Dick"
+        }
+    ]
 }>
 
 LIST_RESPONSE = %q<{
