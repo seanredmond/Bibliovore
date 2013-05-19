@@ -37,7 +37,17 @@ module Bibliovore
       get_endpoint('lists')["lists"].map{|l| 
         Bibliovore::List.new(l, self)
       }
-    end      
+    end
+
+    # Retrieve a list by id
+    #
+    # @param [Fixnum] id The id of the list to retrieve
+    # @return {List} A new List instance
+    def list(id)
+      Bibliovore::List.new(
+        get_endpoint("lists/#{id}", 'list'), self
+      )
+    end
 
     # Retrieve users by name search.
     #
