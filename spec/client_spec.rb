@@ -35,6 +35,40 @@ describe Bibliovore::Client do
     end        
   end
 
+  describe "#lists" do
+    before :each do
+      @client.conn.stub!(:get).and_return(mock Faraday::Response,
+        :body => LISTS_RESPONSE
+      )
+      @lists = @client.lists()
+    end
+
+    it "returns an Array" do
+      @lists.should be_an_instance_of Array
+    end
+
+    it "returns an Array of List objects" do
+      @lists.first.should be_an_instance_of Bibliovore::List
+    end
+  end
+
+  describe "#list" do
+    before :each do
+      @client.conn.stub!(:get).and_return(mock Faraday::Response,
+        :body => LIST_RESPONSE
+      )
+      @list = @client.list('12345678')
+    end
+
+    it "returns a List object" do
+      @list.should be_an_instance_of Bibliovore::List
+    end
+
+    it "returns the right list" do
+      @list.id.should eq "138453972"
+    end
+  end
+
   describe "#user" do
     context "with a good id" do
       before :each do
