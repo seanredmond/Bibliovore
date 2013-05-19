@@ -81,7 +81,7 @@ describe Bibliovore::Client do
       @titles.should be_an_instance_of Bibliovore::TitleResults
     end
 
-    context "asdsa" do
+    context "with default search type" do
       it "passes the default search type to #get_endpoint" do
         @client.conn.should_receive(:get).
           with(
