@@ -3,7 +3,6 @@ require "spec_helper"
 describe Bibliovore::ListItem do
   before :each do
     @data = JSON.parse(LIST_RESPONSE)
-    @client = Bibliovore::Client.new('12345')
   end
 
   context "with a title item" do

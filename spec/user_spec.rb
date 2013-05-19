@@ -3,7 +3,6 @@ require "spec_helper"
 describe Bibliovore::User do
   before :each do
     @data = JSON.parse(USERID_RESPONSE)['user']
-    @client = Bibliovore::Client.new('12345')
     @user = Bibliovore::User.new(@data, @client)
   end
 

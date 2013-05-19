@@ -3,7 +3,6 @@ require "spec_helper"
 describe Bibliovore::Library do
   before :each do
     @data = JSON.parse(LIBRARY_RESPONSE)['library']
-    @client = Bibliovore::Client.new('12345')
     @library = Bibliovore::Library.new(@data, @client)
   end
 

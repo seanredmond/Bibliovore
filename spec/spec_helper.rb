@@ -1,5 +1,12 @@
 require "bibliovore"
 
+RSpec.configure do |config|
+  config.before(:each) {
+    @client = Bibliovore::Client.new('12345')   
+    @client.conn.stub!(:get).and_return('Generic stub needs to be overriden') 
+  }
+end
+
 LIBRARY_RESPONSE = %q<{
     "library": {
         "id": "examplepl",

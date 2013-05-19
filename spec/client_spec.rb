@@ -1,10 +1,6 @@
 require "spec_helper"
 
 describe Bibliovore::Client do
-  before :each do
-    @client = Bibliovore::Client.new('12345')
-  end
-
   describe "#library" do
     context "with a good id" do
       it "returns a Library object" do

@@ -3,7 +3,6 @@ require "spec_helper"
 describe Bibliovore::TitleResults do
   before :each do
     @data = JSON.parse(TITLES_RESPONSE)
-    @client = Bibliovore::Client.new('12345')
     @titles = Bibliovore::TitleResults.new(@data, @client)
   end
 
