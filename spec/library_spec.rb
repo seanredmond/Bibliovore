@@ -46,4 +46,54 @@ describe Bibliovore::Library do
       @locations.first.name.should eq "Main Branch"
     end
   end
+
+  describe "#titles" do
+    before :each do
+      @client.conn.stub!(:get).and_return(mock Faraday::Response,
+        :body => TITLES_RESPONSE
+      )
+    end
+
+    it "returns a TitleResults object" do
+      titles = @library.titles('Moby Dick')
+      titles.should be_an_instance_of Bibliovore::TitleResults
+    end
+
+    it "passes its own id" do
+      @client.should_receive(:titles).
+        with(
+          an_instance_of(String), 
+          "examplepl",
+          an_instance_of(String),           
+          an_instance_of(Hash)
+        )
+      titles = @library.titles('Moby Dick')
+    end
+
+    context "with default search type" do
+      it "passes the correct default search type" do
+        @client.should_receive(:titles).
+          with(
+            an_instance_of(String), 
+            "examplepl",
+            "keyword",           
+            an_instance_of(Hash)
+          )
+        titles = @library.titles('Moby Dick')
+      end
+    end
+
+    context "with specified search type" do
+      it "passes the specified search type" do
+        @client.should_receive(:titles).
+          with(
+            an_instance_of(String), 
+            "examplepl",
+            "tag",           
+            an_instance_of(Hash)
+          )
+        titles = @library.titles('Moby Dick', 'tag')
+      end
+    end
+  end
 end
