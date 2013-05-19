@@ -49,6 +49,23 @@ module Bibliovore
       )
     end
 
+    # Retrieve titles matching a search term
+    #
+    # @param [String] query The term to search for
+    # @param [String] library The id of the library to search
+    # @param [String] search_type
+    # @param [Hash] options Extra options to be passed to the API endpoint
+    # @return [TitleResults] A {TitleResults} objects
+    def titles(query, library, search_type='keyword', options={})
+      options.merge!(
+        {'q' => query, 'library' => library, 'search_type' => search_type}
+      )
+      Bibliovore::TitleResults.new(
+        get_endpoint('titles', nil, options), self
+      )
+    end  
+
+
     # Retrieve users by name search.
     #
     # @param [String] query The string to search for

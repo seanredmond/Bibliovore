@@ -69,6 +69,38 @@ describe Bibliovore::Client do
     end
   end
 
+  describe "#titles" do
+    before :each do
+      @client.conn.stub!(:get).and_return(mock Faraday::Response,
+        :body => TITLES_RESPONSE
+      )
+      @titles = @client.titles('Moby Dick', 'nypl')
+    end
+
+    it "returns a TitleResults object" do
+      @titles.should be_an_instance_of Bibliovore::TitleResults
+    end
+
+    context "asdsa" do
+      it "passes the default search type to #get_endpoint" do
+        @client.conn.should_receive(:get).
+          with(
+            an_instance_of(String), 
+            hash_including('search_type' => 'keyword')
+          )
+        @client.titles('Moby Dick', 'nypl')
+      end
+    end
+
+    context "with specified search type" do
+      it "passes the specified search type to #get_endpoint" do
+        @client.conn.should_receive(:get).
+          with(an_instance_of(String), hash_including('search_type' => 'tag'))
+        @client.titles('Moby Dick', 'nypl', 'tag')
+      end
+    end
+  end
+
   describe "#user" do
     context "with a good id" do
       before :each do
