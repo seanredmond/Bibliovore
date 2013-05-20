@@ -489,6 +489,76 @@ TITLES_RESPONSE = %q<{
     ]
 }>
 
+COPIES_RESPONSE  = %q<{
+    "copies": [
+        {
+            "call_number": "CLASSICS FIC M",
+            "collection": "Countee Cullen Fiction",
+            "library_status": "AVAILABLE",
+            "location": {
+                "id": "52-HT",
+                "name": "Countee Cullen"
+            },
+            "status": {
+                "id": "AVAILABLE",
+                "name": "Available"
+            }
+        },
+        {
+            "call_number": "CLASSICS FIC M",
+            "collection": "Muhlenberg Fiction",
+            "library_status": "DUE",
+            "location": {
+                "id": "52-MU",
+                "name": "Muhlenberg"
+            },
+            "status": {
+                "id": "UNAVAILABLE",
+                "name": "All copies in use"
+            }
+        },
+        {
+            "call_number": "CLASSICS FIC M",
+            "collection": "Mosholu Fiction",
+            "library_status": "AVAILABLE",
+            "location": {
+                "id": "52-MO",
+                "name": "Mosholu"
+            },
+            "status": {
+                "id": "AVAILABLE",
+                "name": "Available"
+            }
+        },
+        {
+            "call_number": "CLASSICS FIC M",
+            "collection": "Inwood Fiction",
+            "library_status": "DUE",
+            "location": {
+                "id": "52-IN",
+                "name": "Inwood"
+            },
+            "status": {
+                "id": "UNAVAILABLE",
+                "name": "All copies in use"
+            }
+        },
+        {
+            "call_number": "CLASSICS FIC M",
+            "collection": "Jefferson Market Fiction",
+            "library_status": "DUE",
+            "location": {
+                "id": "52-JM",
+                "name": "Jefferson Market"
+            },
+            "status": {
+                "id": "UNAVAILABLE",
+                "name": "All copies in use"
+            }
+        }
+    ]
+}>
+
 LIST_RESPONSE = %q<{
     "list": {
         "created": "2012-11-12T20:26:39Z",
